@@ -1,3 +1,21 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+'''
+@File    :   epub2html.py
+@Time    :   2025-01-18 21:11:53
+@Author  :   Ez
+@Version :   1.0
+@Desc    :   None
+
+requirements: 
+
+ebooklib==0.18
+bs4==0.0.2
+
+'''
+
+
+
 import os
 import sys 
 import ebooklib 
@@ -42,11 +60,10 @@ def epub2htmls(file_path, save_dir=''):
 
 def handle_paths(paths):
     for path in paths:  
-        if os.path.isfile(path):  
-            save_dir = Path(path).with_suffix("").as_posix() + '-split'
-            if not os.path.isdir(save_dir):os.makedirs(save_dir) 
-            epub2htmls(path, save_dir)
+        if os.path.isfile(path):    
+            epub2htmls(path)
     
+
 
 if __name__ == '__main__':
     
